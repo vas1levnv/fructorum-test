@@ -1,0 +1,127 @@
+<template lang="pug">
+div(class="app")
+  TheHeader
+  main
+    NuxtPage
+  TheFooter
+</template>
+
+<script setup lang="ts">
+import TheHeader from "~/components/TheHeader.vue";
+</script>
+
+<style lang="scss">
+@import "public/css/vars";
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 100vw;
+  min-height: 100svh;
+}
+
+.container {
+  max-width: 540px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 1rem;
+
+  @media (min-width: $md) {
+    max-width: 720px;
+  }
+  @media (min-width: $lg) {
+    max-width: 960px;
+  }
+  @media (min-width: $xl) {
+    max-width: 1140px;
+  }
+  @media (min-width: $xxl) {
+    max-width: 1320px;
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a, a:link, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+aside, nav, footer, header, section, main {
+  display: block;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+ul, ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+img, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+address {
+  font-style: normal;
+}
+
+input, textarea, button, select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button, input[type="submit"] {
+  display: inline-block;
+  box-shadow: none;
+  background-color: transparent;
+  background: none;
+  cursor: pointer;
+}
+
+input:focus, input:active,
+button:focus, button:active {
+  outline: none;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+label {
+  cursor: pointer;
+}
+
+legend {
+  display: block;
+}
+
+</style>
