@@ -1,8 +1,9 @@
 <template lang="pug">
+
 div(class="app")
   TheHeader
   main
-    NuxtPage
+  NuxtPage
   TheFooter
 </template>
 
@@ -12,6 +13,7 @@ import TheHeader from "~/components/TheHeader.vue";
 
 <style lang="scss">
 @import "public/css/vars";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,800;1,300&family=Ubuntu&display=swap');
 
 .app {
   display: flex;
@@ -19,6 +21,9 @@ import TheHeader from "~/components/TheHeader.vue";
   justify-content: space-between;
   min-width: 100vw;
   min-height: 100svh;
+  font-family: 'Montserrat', sans-serif;
+  color: $main-black;
+  background: $main-white;
 }
 
 .container {
