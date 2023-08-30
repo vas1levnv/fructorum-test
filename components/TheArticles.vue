@@ -1,6 +1,5 @@
 <script setup>
 import TheButton from "~/components/Ui/TheButton.vue";
-
 const props = defineProps(["articles"])
 </script>
 
@@ -10,7 +9,7 @@ div(class="articles")
     div(class="articles-item_img")
       img(:src="item.image")
     div(class="articles-item_text") {{item.title}}
-    a(:href="item.link")
+    NuxtLink(:to="'/articles' + item.link")
       TheButton Читать
 </template>
 
