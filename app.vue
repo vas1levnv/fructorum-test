@@ -59,6 +59,7 @@ import TheHeader from "~/components/TheHeader.vue";
 }
 
 a, a:link, a:visited {
+  color: inherit;
   text-decoration: none;
 }
 
