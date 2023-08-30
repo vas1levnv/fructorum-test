@@ -9,26 +9,26 @@ import instagramLogo from '~/src/img/instagram.svg'
 
 <template lang="pug">
 footer(class='footer')
-  div(class='container footer-wrapper')
-    div(class='footer-content')
+  div(class="container footer-wrapper")
+    div(class="footer-content")
       div
         TheLogo
-        div(class='footer_text') Cтатьи о дизайне и искусстве, которые исследуют творческие вдохновения и актуальные тенденции, раскрывая мир эстетики и креативности
+        div(class="footer_text") Cтатьи о дизайне и искусстве, которые исследуют творческие вдохновения и актуальные тенденции, раскрывая мир эстетики и креативности
       div
-        div(class='footer_email-description') email
-        a(class='footer_email' href='mailto:testblogsupport@gmail.com') testblogsupport@gmail.com
-        ul(class='footer_list')
+        div(class="footer_email-description") email
+        a(class="footer_email" href="mailto:testblogsupport@gmail.com") testblogsupport@gmail.com
+        ul(class="footer_list")
           li(class="footer_list-item")
-            a(href='/')
+            a(href="/")
               img(:src="facebookLogo")
           li(class="footer_list-item")
-            a(href='/')
+            a(href="/")
               img(:src="vkLogo")
           li(class="footer_list-item")
-            a(href='/')
+            a(href="/")
               img(:src="instagramLogo")
           li(class="footer_list-item")
-            a(href='/')
+            a(href="/")
               img(:src="telegramLogo")
     TheForm
 </template>

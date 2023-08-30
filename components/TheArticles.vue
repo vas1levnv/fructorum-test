@@ -1,0 +1,42 @@
+<script setup>
+import TheButton from "~/components/Ui/TheButton.vue";
+
+const props = defineProps(["articles"])
+</script>
+
+<template lang="pug">
+div(class="articles")
+  div(v-for="item in articles" :key="articles.link" class="articles-item")
+    div(class="articles-item_img")
+      img(:src="item.image")
+    div(class="articles-item_text") {{item.title}}
+    a(:href="item.link")
+      TheButton Читать
+</template>
+
+<style scoped lang="scss">
+ .articles{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 1.875rem;
+
+ &-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    &_img{
+      width: 100%;
+      img{
+        width: 100%;
+      }
+    }
+    &_text{
+      flex: 1 1 0;
+      margin: 1.25rem 0 1.875rem;
+      font-weight: 800;
+      font-size: 1.375rem;
+    }
+  }
+}
+</style>

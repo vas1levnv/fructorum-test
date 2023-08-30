@@ -3,7 +3,7 @@
 div(class="app")
   TheHeader
   main
-  NuxtPage
+    NuxtPage
   TheFooter
 </template>
 
@@ -24,6 +24,15 @@ import TheHeader from "~/components/TheHeader.vue";
   font-family: 'Montserrat', sans-serif;
   color: $main-black;
   background: $main-white;
+}
+
+body{
+  overflow-x: hidden;
+}
+
+main{
+  flex: 1 1 0;
+  margin: 1.875rem 0;
 }
 
 .container {

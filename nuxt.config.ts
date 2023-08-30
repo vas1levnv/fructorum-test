@@ -5,7 +5,10 @@ export default defineNuxtConfig({
         vue: {
             customElement: true
         },
-    }
+    },
+    modules: [
+        '@pinia/nuxt',
+    ],
 })
 
 

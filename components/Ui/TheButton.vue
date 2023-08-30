@@ -1,11 +1,11 @@
 <script setup>
 const props = defineProps([
-  'buttonView'
+  "buttonView"
 ])
 
 let isBlue = false
 
-if (props.buttonView === 'blue') {
+if (props.buttonView === "blue") {
   isBlue = true
 }
 
@@ -26,6 +26,7 @@ button(class="button" :class="{ button_blue: isBlue }")
   border: 1px solid $main-black;
   transition: $tr;
   font-size: 1.125rem;
+  color: white;
 
   &:hover {
     background: $main-blue;
