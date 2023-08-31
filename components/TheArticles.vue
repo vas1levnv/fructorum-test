@@ -13,7 +13,7 @@ div(class="posts")
       TheButton Читать
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
 @import "public/css/vars";
 
 .posts{
