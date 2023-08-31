@@ -55,9 +55,8 @@ div(class="container")
 @import "public/css/vars";
 
 .article {
-  &:not(:last-child) {
-    padding-bottom: 6.25rem;
-  }
+  padding-bottom: 6.25rem;
+  font-size: 1.125rem;
 
   p {
     line-height: 144.44%;
@@ -110,6 +109,28 @@ div(class="container")
         padding: 0.625rem 0;
       }
 
+      ul{
+        width: 80%;
+        margin: 0.5rem auto;
+        list-style: none;
+        li {
+          position: relative;
+          margin-bottom: 0.5rem;
+          display: flex;
+          align-items: center;
+
+          &:before{
+            content: '';
+            flex: none;
+            background: $main-black;
+            width: 8px;
+            height: 8px;
+            margin-right: 0.5rem;
+            transform: rotate(45deg);
+          }
+        }
+      }
+
       blockquote {
         display: grid;
         grid-template-columns: min-content 1fr;
@@ -117,31 +138,59 @@ div(class="container")
         margin-top: 1.25rem;
         font-style: italic;
 
-        &:before{
+        &:before {
           content: url("../../src/img/quotes.svg");
           display: block;
           margin-right: 2.25rem;
           grid-row: 1/3;
         }
-
       }
     }
   }
-  &-image{
-    &_block{
+
+  &-image {
+    &_block {
       width: 100%;
-      img{
+
+      img {
         width: 100%;
       }
     }
   }
-  &-list{
-    &_block{
+
+  &-list {
+    &_block {
 
     }
-    &_title{
-margin-bottom: 3.125rem;
+
+    &_title {
+      margin-bottom: 3.125rem;
     }
   }
 }
+
+@media (max-width: $lg) {
+  .article {
+    padding-bottom: 3rem;
+
+    &-intro {
+      &_block {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    &-text {
+      &_block {
+        width: 100%;
+
+        blockquote {
+          &:before {
+            margin-right: 1.25rem;
+          }
+        }
+      }
+    }
+  }
+}
+
 </style>

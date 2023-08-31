@@ -38,15 +38,14 @@ div(class="articles")
     }
   }
 }
-@media (max-width: $lg) {
-  .articles{
-    grid-template-columns: 1fr 1fr;
-  }
-}
 
-@media (max-width: $sm) {
+@media (max-width: $md) {
   .articles{
     grid-template-columns: 1fr;
+    &_text{
+      flex: 1 1 0;
+      margin: 0.75rem 0 1rem;
+    }
   }
 }
 
