@@ -1,6 +1,6 @@
 <script setup>
 import TheLogo from "~/components/Ui/TheLogo.vue";
-import TheForm from "~/components/TheForm.vue";
+import TheSubscribeForm from "~/components/TheSubscribeForm.vue";
 import facebookLogo from '~/src/img/facebook.svg'
 import vkLogo from '~/src/img/vk.svg'
 import telegramLogo from '~/src/img/telegram.svg'
@@ -30,7 +30,7 @@ footer(class='footer')
           li(class="footer_list-item")
             a(href="/")
               img(:src="telegramLogo")
-    TheForm
+    TheSubscribeForm
 </template>
 
 <style scoped lang="scss">

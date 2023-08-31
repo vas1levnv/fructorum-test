@@ -1,45 +1,64 @@
 <script setup>
-import TheButton from "~/components/Ui/TheButton.vue";
 import TheInput from "~/components/Ui/TheInput.vue";
-
+import TheButton from "~/components/Ui/TheButton.vue";
+import image from "~/src/img/theFormImage.png"
 </script>
 
 <template lang="pug">
 form(class="form" v-on:submit.prevent)
-  div(class="form_title") Подпишись на рассылку
+  div(class="form-image")
+    img(:src="image" alt="formImage")
   div(class="form-content")
-    TheInput
+    h2 Стань участником проекта
+    div(class="form-inputs")
+      TheInput(placeholder="Имя")
+      TheInput(placeholder="Телефон")
+      TheInput(placeholder="Email")
     TheButton(buttonView="blue") Подписаться
 </template>
 
 <style scoped lang="scss">
 @import "public/css/vars";
 
-.form {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1.75rem;
+.form{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 3.75rem;
+  gap: 3.75rem;
   background: $main-black;
   color: white;
-  gap: 2.25rem;
-
-
-  &_title{
-    font-weight: 900;
-    font-size: 1.375rem;
-  }
 
   &-content{
-    align-self: stretch;
     display: flex;
-    align-items: center;
-    width: 50%;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
-  input{
-    margin-right: 2.25rem;
-    max-width: 350px;
+  &-image{
+    position: relative;
+    overflow: hidden;
+    img{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%) scaleX(-1);
+    }
   }
+
+  h2{
+    margin-bottom: 3rem;
+  }
+
+  &-inputs{
+    flex: 1 1 0;
+    margin-bottom: 3rem;
+    input:not(:last-child){
+      margin-bottom: 1.5rem;
+    }
+  }
+  button{
+    width: min-content;
+  }
+
 }
 </style>

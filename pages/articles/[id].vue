@@ -2,6 +2,7 @@
 import {useArticlesPageStore} from "~/stores/articlesStore";
 import clockIcon from "~/src/img/clock.svg";
 import watchingIcon from "~/src/img/watching.svg";
+import TheSubscribeForm from "~/components/TheSubscribeForm.vue";
 
 const route = useRoute()
 const store = useArticlesPageStore()
@@ -35,18 +36,18 @@ div(class="container")
           div {{block.data.views_count}} прочитали статью
         p(class="article-intro_description") {{block.data.short_description}}
     div(v-if="block.type === 'text_block'" class="article-text_block" v-html="block.data")
-    //думаю здесь ошибка в передаче данных у заголовка
+    //думаю здесь ошибка в передаче данных у заголовка h2 и h3 у вас даже в фигме это написано
     div(v-if="block.type === 'image_block'" class="article-image_block")
       img(:src="block.data.src" alt="block.data.caption")
     div(v-if="block.type === 'slider_block'" class="slider_block")
       div() {{block.data}}
     div(v-if="block.type === 'subscribe_form_block'" class="subscribe_form_block")
-      TheForm
-    div(v-if="block.type === 'article_list_block'" class="article_list_block")
-      div() {{block.data.title}}
+      TheSubscribeForm
+    div(v-if="block.type === 'article_list_block'" class="article-list_block")
+      h2(class="article-list_title") {{block.data.title}}
       TheArticles(:articles="block.data.articles")
     div(v-if="block.type === 'cta_form_block'" class="cta_form_block")
-      div() {{block.data}}
+      TheForm
 </template>
 
 <style lang="scss">
@@ -131,6 +132,14 @@ div(class="container")
       img{
         width: 100%;
       }
+    }
+  }
+  &-list{
+    &_block{
+
+    }
+    &_title{
+margin-bottom: 3.125rem;
     }
   }
 }

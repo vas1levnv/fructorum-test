@@ -1,9 +1,9 @@
 <script setup>
-
+const props = defineProps(['placeholder'])
 </script>
 
 <template lang="pug">
-input(placeholder="Email")
+input(:placeholder="placeholder")
 </template>
 
 <style scoped lang="scss">
@@ -11,7 +11,6 @@ input(placeholder="Email")
 
 input {
   width: 100%;
-  height: 100%;
   background: none;
   padding: 0.5rem;
   border-bottom: 1px solid $main-gray;
