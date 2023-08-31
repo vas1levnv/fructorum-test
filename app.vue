@@ -169,4 +169,38 @@ legend {
   display: block;
 }
 
+.posts{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 1.875rem;
+
+  &-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    &_img{
+      width: 100%;
+      img{
+        width: 100%;
+      }
+    }
+    &_text{
+      flex: 1 1 0;
+      margin: 1.25rem 0 1.875rem;
+    }
+  }
+}
+
+@media (max-width: $md) {
+  .posts{
+    grid-template-columns: 1fr;
+    &_text{
+      flex: 1 1 0;
+      margin: 0.75rem 0 1rem;
+    }
+  }
+}
+
+
 </style>
