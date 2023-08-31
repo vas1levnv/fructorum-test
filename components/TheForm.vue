@@ -59,6 +59,27 @@ form(class="form" v-on:submit.prevent)
   button{
     width: min-content;
   }
-
 }
+@media (max-width: $lg) {
+  .form{
+    grid-template-columns: 1fr;
+    &-image{
+      height: 300px;
+    }
+  }
+}
+
+@media (max-width: $sm) {
+  .form{
+    padding: 1.5rem;
+    gap: 1.5rem;
+    h2{
+      margin-bottom: 1.5rem;
+    }
+    &-inputs{
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+
 </style>

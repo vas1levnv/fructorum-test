@@ -35,4 +35,33 @@ form(class="form" v-on:submit.prevent)
     max-width: 350px;
   }
 }
+
+@media (max-width: $lg) {
+  .form{
+    flex-direction: column;
+    padding: 1.5rem;
+    &-content{
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: $sm) {
+  .form{
+    padding: 1rem;
+    gap:1rem;
+    &-content{
+      flex-direction: column;
+
+      input{
+        margin: 0;
+      }
+
+      button{
+        margin-top: 1rem;
+      }
+    }
+  }
+}
 </style>

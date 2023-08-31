@@ -89,16 +89,34 @@ h1, h2, h3, h4, h5, h6 {
   font-size: inherit;
   font-weight: 800;
 }
-h1{
+
+h1 {
   font-size: 3.5rem;
+
+  @media (max-width: $lg) {
+    font-size: 2.5rem;
+  }
+  @media (max-width: $sm) {
+    font-size: 2rem;
+  }
 }
 
 h2{
   font-size: 2.125rem;
+
+  @media (max-width: $lg) {
+    font-size: 1.5rem;
+  }
+  @media (max-width: $sm) {
+    font-size: 1.25rem;
+  }
 }
 
 h3{
   font-size: 1.375rem;
+  @media (max-width: $lg) {
+    font-size: 1rem;
+  }
 }
 
 img {

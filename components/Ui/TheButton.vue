@@ -42,4 +42,12 @@ button(class="button" :class="{ button_blue: isBlue }")
     }
   }
 }
+
+@media (max-width: $sm) {
+  .button {
+    font-size: 0.875rem;
+    padding: 0.5rem 1.5rem;
+  }
+}
+
 </style>

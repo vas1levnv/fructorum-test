@@ -48,6 +48,7 @@ footer(class='footer')
     justify-content: space-between;
     align-items: end;
     margin-bottom: 4.375rem;
+    gap: 2rem;
   }
 
   &_text{
@@ -69,6 +70,22 @@ footer(class='footer')
     &-item a{
       display: block;
       padding: 0.625rem;
+    }
+  }
+}
+
+
+@media (max-width: $sm) {
+  .footer {
+    &-wrapper {
+      padding-top: 1.5rem;
+    }
+
+    &-content{
+      flex-direction: column;
+      gap: 1rem;
+      align-items: start;
+      margin-bottom: 2rem;
     }
   }
 }

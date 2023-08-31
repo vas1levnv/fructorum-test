@@ -3,13 +3,13 @@ const props = defineProps(['placeholder'])
 </script>
 
 <template lang="pug">
-input(:placeholder="placeholder")
+input(class="input" :placeholder="placeholder")
 </template>
 
 <style scoped lang="scss">
 @import "public/css/vars";
 
-input {
+.input {
   width: 100%;
   background: none;
   padding: 0.5rem;
@@ -25,4 +25,11 @@ input {
     border-color: $main-blue;
   }
 }
+
+@media (max-width: $sm) {
+  .input {
+    font-size: 0.875rem;
+  }
+}
+
 </style>

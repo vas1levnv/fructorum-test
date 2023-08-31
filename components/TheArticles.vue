@@ -14,7 +14,9 @@ div(class="articles")
 </template>
 
 <style scoped lang="scss">
- .articles{
+@import "public/css/vars";
+
+.articles{
   display: grid;
   grid-template-columns: repeat(3,1fr);
   gap: 1.875rem;
@@ -36,4 +38,16 @@ div(class="articles")
     }
   }
 }
+@media (max-width: $lg) {
+  .articles{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: $sm) {
+  .articles{
+    grid-template-columns: 1fr;
+  }
+}
+
 </style>
