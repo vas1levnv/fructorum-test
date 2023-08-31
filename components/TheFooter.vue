@@ -65,6 +65,7 @@ footer(class='footer')
   &_list{
     display: flex;
     margin: 0.625rem -0.625rem;
+    list-style: none;
     &-item a{
       display: block;
       padding: 0.625rem;

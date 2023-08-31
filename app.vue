@@ -85,8 +85,20 @@ h1, h2, h3, h4, h5, h6, p {
   font-weight: inherit;
 }
 
-ul, ul li {
-  list-style: none;
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 800;
+}
+h1{
+  font-size: 3.5rem;
+}
+
+h2{
+  font-size: 2.125rem;
+}
+
+h3{
+  font-size: 1.375rem;
 }
 
 img {

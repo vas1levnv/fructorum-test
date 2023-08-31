@@ -8,7 +8,7 @@ div(class="articles")
   div(v-for="item in articles" :key="articles.link" class="articles-item")
     div(class="articles-item_img")
       img(:src="item.image")
-    div(class="articles-item_text") {{item.title}}
+    h3(class="articles-item_text") {{item.title}}
     NuxtLink(:to="'/articles' + item.link")
       TheButton Читать
 </template>
@@ -33,8 +33,6 @@ div(class="articles")
     &_text{
       flex: 1 1 0;
       margin: 1.25rem 0 1.875rem;
-      font-weight: 800;
-      font-size: 1.375rem;
     }
   }
 }

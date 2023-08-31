@@ -1,5 +1,7 @@
 <script setup>
 import {useArticlesPageStore} from "~/stores/articlesStore";
+import clockIcon from "~/src/img/clock.svg";
+import watchingIcon from "~/src/img/watching.svg";
 
 const route = useRoute()
 const store = useArticlesPageStore()
@@ -7,12 +9,12 @@ const store = useArticlesPageStore()
 //const content = JSON.parse(JSON.stringify(body))
 useHead({
   title: store.metaArticles.title,
-  meta:[
+  meta: [
     {name: store.metaArticles.description}
   ],
 })
 
-onMounted(()=>{
+onMounted(() => {
   store.fetchArticles(route.params.id)
 })
 </script>
@@ -20,10 +22,20 @@ onMounted(()=>{
 <template lang="pug">
 div(class="container")
   div(v-for="block in store.bodyArticles" :key="block.type" class="article")
-    div(v-if="block.type === 'article_intro_block'" class="article_intro_block")
-      div() {{block.data}}
-    div(v-if="block.type === 'text_block'" class="text_block")
-      div() {{block.data}}
+    div(v-if="block.type === 'article_intro_block'" class="article-intro_block")
+      div(class="article-intro_img")
+        img(:src="block.data.image")
+      div(class="article-intro_content")
+        h1(class="article-intro_title") {{block.data.title}}
+        div(class="article-intro_info")
+          img(:src="clockIcon")
+          div {{block.data.reading_time}} мин время чтения
+        div(class="article-intro_info")
+          img(:src="watchingIcon")
+          div {{block.data.views_count}} прочитали статью
+        p(class="article-intro_description") {{block.data.short_description}}
+    div(v-if="block.type === 'text_block'" class="article-text_block" v-html="block.data")
+    //думаю здесь ошибка в передаче данных у заголовка
     div(v-if="block.type === 'image_block'" class="image_block")
       div() {{block.data}}
     div(v-if="block.type === 'slider_block'" class="slider_block")
@@ -36,6 +48,81 @@ div(class="container")
       div() {{block.data}}
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
+@import "public/css/vars";
 
+.article {
+  &:not(:last-child) {
+    padding-bottom: 6.25rem;
+  }
+
+  p {
+    line-height: 144.44%;
+  }
+
+  &-intro {
+    &_block {
+      display: grid;
+      grid-template-columns: 5fr 7fr;
+      align-items: center;
+      gap: 1.875rem;
+    }
+
+    &_img {
+      border-radius: 0.125rem 40% 0.125rem 0.125rem;
+      overflow: hidden;
+    }
+
+    &_title {
+      margin-bottom: 1.825rem;
+    }
+
+    &_info {
+      display: flex;
+      align-items: center;
+      color: $main-gray;
+
+      img {
+        margin-right: 0.5rem;
+      }
+    }
+
+    &_description {
+      font-size: 1.125rem;
+      margin-top: 3rem;
+    }
+  }
+
+  &-text {
+    &_block {
+      width: 80%;
+      max-width: 880px;
+      margin: 0 auto;
+
+      h2 {
+        margin-bottom: 2.5rem;
+      }
+
+      p {
+        padding: 0.625rem 0;
+      }
+
+      blockquote {
+        display: grid;
+        grid-template-columns: min-content 1fr;
+        font-weight: 300;
+        margin-top: 1.25rem;
+        font-style: italic;
+
+        &:before{
+          content: url("../../src/img/quotes.svg");
+          display: block;
+          margin-right: 2.25rem;
+          grid-row: 1/3;
+        }
+
+      }
+    }
+  }
+}
 </style>
