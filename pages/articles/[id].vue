@@ -3,7 +3,7 @@ import {useArticlesPageStore} from "~/stores/articlesStore";
 import clockIcon from "~/src/img/clock.svg";
 import watchingIcon from "~/src/img/watching.svg";
 import TheSubscribeForm from "~/components/TheSubscribeForm.vue";
-import TheSwiper from "~/components/Ui/TheSwiper.vue";
+import TheSwiper from "~/components/TheSwiper.vue";
 
 const route = useRoute()
 const store = useArticlesPageStore()
