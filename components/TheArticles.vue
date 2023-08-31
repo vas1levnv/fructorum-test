@@ -4,11 +4,11 @@ const props = defineProps(["articles"])
 </script>
 
 <template lang="pug">
-div(class="articles")
-  div(v-for="item in articles" :key="articles.link" class="articles-item")
-    div(class="articles-item_img")
+div(class="posts")
+  div(v-for="item in articles" :key="articles.link" class="posts-item")
+    div(class="posts-item_img")
       img(:src="item.image")
-    h3(class="articles-item_text") {{item.title}}
+    h3(class="posts-item_text") {{item.title}}
     NuxtLink(:to="'/articles' + item.link")
       TheButton Читать
 </template>
@@ -16,7 +16,7 @@ div(class="articles")
 <style scoped lang="scss">
 @import "public/css/vars";
 
-.articles{
+.posts{
   display: grid;
   grid-template-columns: repeat(3,1fr);
   gap: 1.875rem;
@@ -40,7 +40,7 @@ div(class="articles")
 }
 
 @media (max-width: $md) {
-  .articles{
+  .posts{
     grid-template-columns: 1fr;
     &_text{
       flex: 1 1 0;
