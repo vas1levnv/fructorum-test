@@ -21,7 +21,7 @@ onMounted(() => {
 
 <template lang="pug">
 div(class="container")
-  div(v-for="block in store.bodyArticles" :key="block.type" class="article")
+  div(v-for="block in store.bodyArticles" :key="block.id" class="article")
     div(v-if="block.type === 'article_intro_block'" class="article-intro_block")
       div(class="article-intro_img")
         img(:src="block.data.image")
@@ -36,14 +36,15 @@ div(class="container")
         p(class="article-intro_description") {{block.data.short_description}}
     div(v-if="block.type === 'text_block'" class="article-text_block" v-html="block.data")
     //думаю здесь ошибка в передаче данных у заголовка
-    div(v-if="block.type === 'image_block'" class="image_block")
-      div() {{block.data}}
+    div(v-if="block.type === 'image_block'" class="article-image_block")
+      img(:src="block.data.src" alt="block.data.caption")
     div(v-if="block.type === 'slider_block'" class="slider_block")
       div() {{block.data}}
     div(v-if="block.type === 'subscribe_form_block'" class="subscribe_form_block")
-      div() {{block.data}}
+      TheForm
     div(v-if="block.type === 'article_list_block'" class="article_list_block")
-      div() {{block.data}}
+      div() {{block.data.title}}
+      TheArticles(:articles="block.data.articles")
     div(v-if="block.type === 'cta_form_block'" class="cta_form_block")
       div() {{block.data}}
 </template>
@@ -121,6 +122,14 @@ div(class="container")
           grid-row: 1/3;
         }
 
+      }
+    }
+  }
+  &-image{
+    &_block{
+      width: 100%;
+      img{
+        width: 100%;
       }
     }
   }
