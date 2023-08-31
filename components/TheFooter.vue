@@ -46,7 +46,7 @@ footer(class='footer')
   &-content{
     display: flex;
     justify-content: space-between;
-    align-items: end;
+    align-items: flex-end;
     margin-bottom: 4.375rem;
     gap: 2rem;
   }
