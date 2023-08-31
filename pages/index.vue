@@ -19,7 +19,7 @@ useHead({
 
 <template lang="pug">
 div(class='container')
-  TheArticles(:articles="store.articles" )
+  TheArticles(:articles="store.articles")
 </template>
 
 <style scoped>

@@ -5,7 +5,7 @@ const props = defineProps(["articles"])
 
 <template lang="pug">
 div(class="posts")
-  div(v-for="item in articles" :key="articles.link" class="posts-item")
+  div(v-for="item in props.articles" :key="articles.link" class="posts-item")
     div(class="posts-item_img")
       img(:src="item.image")
     h3(class="posts-item_text") {{item.title}}
