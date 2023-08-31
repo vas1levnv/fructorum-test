@@ -1,3 +1,16 @@
+Тестовое выолнено исходя из этих требований
+
+Nuxt 3 
+Vite 
+Composition API
+Pinia 
+Для vue шаблонов использовать PUG
+Для стилей использовать SCSS + BEM
+Адаптив 
+Соответствие верстки макету. Pixel perfect не нужен. Но страница должна выглядеть максимально похоже
+https://www.figma.com/file/4nhFTnd6tWrVblveM5HyDn/Untitled?node-id=1%3A64&mode=dev
+
+
 # Nuxt 3 Minimal Starter
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
