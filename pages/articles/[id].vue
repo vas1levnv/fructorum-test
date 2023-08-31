@@ -3,6 +3,7 @@ import {useArticlesPageStore} from "~/stores/articlesStore";
 import clockIcon from "~/src/img/clock.svg";
 import watchingIcon from "~/src/img/watching.svg";
 import TheSubscribeForm from "~/components/TheSubscribeForm.vue";
+import TheSwiper from "~/components/Ui/TheSwiper.vue";
 
 const route = useRoute()
 const store = useArticlesPageStore()
@@ -40,7 +41,7 @@ div(class="container")
     div(v-if="block.type === 'image_block'" class="article-image_block")
       img(:src="block.data.src" alt="block.data.caption")
     div(v-if="block.type === 'slider_block'" class="slider_block")
-      div() {{block.data}}
+      TheSwiper(v-bind:slides="block.data")
     div(v-if="block.type === 'subscribe_form_block'" class="subscribe_form_block")
       TheSubscribeForm
     div(v-if="block.type === 'article_list_block'" class="article-list_block")
